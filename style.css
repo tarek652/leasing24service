@@ -89,6 +89,10 @@ section {
     transform: translateY(-5px);
 }
 
+.foto-gallarey {
+    text-align: center;
+}
+
 .youtube-gallery {
     text-align: center;
 }
@@ -177,6 +181,7 @@ footer p {
 .toggle-item.open .toggle-btn::after {
     content: "−";
 }
+
 .video-scroll {
     overflow-x: auto;
     padding: 1rem 0;
