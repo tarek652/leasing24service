@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://leasing24service.de/sitemap.xml
+Sitemap: https://leasingtransport24.de/sitemap.xml
