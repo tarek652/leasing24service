@@ -177,3 +177,20 @@ footer p {
 .toggle-item.open .toggle-btn::after {
     content: "−";
 }
+.video-scroll {
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.shorts-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.shorts-wrapper iframe {
+    flex: 0 0 auto;
+    width: 270px;
+    height: 480px;
+    border-radius: 10px;
+}
