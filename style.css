@@ -153,8 +153,6 @@ footer p {
 .toggle-item {
     position: relative;
     cursor: pointer;
-    list-style: none;
-    padding-left: 1.2em;
     font-weight: 500;
 }
 
