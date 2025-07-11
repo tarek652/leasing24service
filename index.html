@@ -132,14 +132,10 @@
             <p>Einblicke in unsere tägliche Arbeit – überzeugen Sie sich selbst!</p>
             <div class="video-scroll">
                 <div class="shorts-wrapper">
-                    <iframe src="https://www.youtube.com/embed/uHlS1WnKLEs?enablejsapi=1"
-                        title="Video 1: Möbeltransport" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/Uz8C5ZU8ih4?enablejsapi=1" title="Video 2: Umzugsservice"
-                        allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/NQEIhZGLA0k?enablejsapi=1" title="Video 3: Küchenmontage"
-                        allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/24M_Yy7iDkc?enablejsapi=1" title="Video 4: Entrümpelung"
-                        allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/uHlS1WnKLEs" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Uz8C5ZU8ih4" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/NQEIhZGLA0k" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/24M_Yy7iDkc" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -159,33 +155,6 @@
                 item.classList.toggle('open');
             });
         });
-    </script>
-    <script>
-        const players = [];
-        const iframes = document.querySelectorAll('.shorts-wrapper iframe');
-
-        iframes.forEach((iframe, index) => {
-            iframe.id = `ytplayer-${index}`;
-            players.push(new YT.Player(iframe.id));
-        });
-        function onYouTubeIframeAPIReady() {
-            iframes.forEach((iframe, index) => {
-                players[index] = new YT.Player(iframe.id, {
-                    events: {
-                        'onStateChange': (event) => {
-                            if (event.data === YT.PlayerState.PLAYING) {
-                                players.forEach((p, i) => {
-                                    if (i !== index && p.pauseVideo) p.pauseVideo();
-                                });
-                            }
-                        }
-                    }
-                });
-            });
-        }
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        document.head.appendChild(tag);
     </script>
 </body>
 </html>
