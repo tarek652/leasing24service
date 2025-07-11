@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MVT50N665S"></script>
     <script>
@@ -27,6 +28,7 @@
     <meta property="og:image" content="https://leasingtransport24.de/logo.png" />
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>LeasingTransport24 – Umzüge & Transporte</h1>
@@ -40,7 +42,8 @@
     <div class="container">
         <section id="intro">
             <h2>Stressfreier Umzug – Schnell, Sicher und Preiswert</h2>
-            <p>LeasingTransport24 ist Ihr kompetenter Partner für private & gewerbliche Umzüge in Berlin, Deutschland, und ganz Europa. Wir bieten Ihnen Rundum-Service mit Qualität und Leidenschaft.</p>
+            <p>LeasingTransport24 ist Ihr kompetenter Partner für private & gewerbliche Umzüge in Berlin, Deutschland,
+                und ganz Europa. Wir bieten Ihnen Rundum-Service mit Qualität und Leidenschaft.</p>
         </section>
         <section id="leistungen">
             <h2>Unsere Leistungen</h2>
@@ -129,13 +132,13 @@
             <p>Einblicke in unsere tägliche Arbeit – überzeugen Sie sich selbst!</p>
             <div class="video-scroll">
                 <div class="shorts-wrapper">
-                    <iframe src="https://www.youtube.com/embed/uHlS1WnKLEs" title="Video 1: Möbeltransport"
+                    <iframe src="https://www.youtube.com/embed/uHlS1WnKLEs?enablejsapi=1"
+                        title="Video 1: Möbeltransport" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Uz8C5ZU8ih4?enablejsapi=1" title="Video 2: Umzugsservice"
                         allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/Uz8C5ZU8ih4" title="Video 2: Umzugsservice"
+                    <iframe src="https://www.youtube.com/embed/NQEIhZGLA0k?enablejsapi=1" title="Video 3: Küchenmontage"
                         allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/NQEIhZGLA0k" title="Video 3: Küchenmontage"
-                        allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/24M_Yy7iDkc" title="Video 4: Entrümpelung"
+                    <iframe src="https://www.youtube.com/embed/24M_Yy7iDkc?enablejsapi=1" title="Video 4: Entrümpelung"
                         allowfullscreen></iframe>
                 </div>
             </div>
@@ -156,6 +159,33 @@
                 item.classList.toggle('open');
             });
         });
+    </script>
+    <script>
+        const players = [];
+        const iframes = document.querySelectorAll('.shorts-wrapper iframe');
+
+        iframes.forEach((iframe, index) => {
+            iframe.id = `ytplayer-${index}`;
+            players.push(new YT.Player(iframe.id));
+        });
+        function onYouTubeIframeAPIReady() {
+            iframes.forEach((iframe, index) => {
+                players[index] = new YT.Player(iframe.id, {
+                    events: {
+                        'onStateChange': (event) => {
+                            if (event.data === YT.PlayerState.PLAYING) {
+                                players.forEach((p, i) => {
+                                    if (i !== index && p.pauseVideo) p.pauseVideo();
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+        }
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(tag);
     </script>
 </body>
 </html>
